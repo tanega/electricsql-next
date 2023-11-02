@@ -1,5 +1,10 @@
+import { Metadata } from "next";
 import { Example } from "@/components/Example";
 import Image from "next/image";
+
+const APP_NAME = "electricsql-next-pwa example";
+const APP_DESCRIPTION =
+  "This is an example of using next-pwa plugin, with local first architecture based CRDTs with ElectricSQL";
 
 export default function Home() {
   return (
@@ -111,3 +116,42 @@ export default function Home() {
     </main>
   );
 }
+
+export const metadata: Metadata = {
+  title: "PWA 💖 Next.js",
+  description: APP_DESCRIPTION,
+  twitter: {
+    card: "summary_large_image",
+    creator: "@imamdev_",
+    images: "https://example.com/og.png",
+  },
+  applicationName: APP_NAME,
+  appleWebApp: {
+    capable: true,
+    title: APP_NAME,
+    statusBarStyle: "default",
+  },
+  formatDetection: {
+    telephone: false,
+  },
+  themeColor: "#317EFB",
+  viewport:
+    "width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no",
+  manifest: "/manifest.json",
+  icons: [
+    {
+      rel: "icon",
+      url: "/icons/16.png",
+      sizes: "16x16",
+      type: "image/png",
+    },
+    {
+      rel: "icon",
+      url: "/icons/32.png",
+      sizes: "32x32",
+      type: "image/png",
+    },
+    { rel: "apple-touch-icon", url: "/apple-icon.png" },
+  ],
+  keywords: ["nextjs", "pwa", "next-pwa", "local-first architecture"],
+};
