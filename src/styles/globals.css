@@ -1,0 +1,67 @@
+@import url("https://rsms.me/inter/inter.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  @apply scroll-smooth font-display antialiased;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+html {
+  @apply bg-white;
+  scrollbar-color: #00000080 transparent;
+  scrollbar-width: auto;
+}
+
+html[class*="dark"] {
+  @apply bg-gray-900;
+  scrollbar-color: #ffffffb3 transparent;
+  scrollbar-width: auto;
+}
+
+::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-black/50 dark:bg-white/70;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-black/60 dark:hover:bg-white/80;
+}
+
+button {
+  /* Disables tap highlight color on Chrome */
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Input darkmode fix for checkbox / radio */
+.dark [type="checkbox"]:checked,
+.dark [type="radio"]:checked {
+  background-color: currentColor;
+}
+
+/* body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+} */

@@ -5,7 +5,6 @@ import React, { useEffect, useState } from "react";
 import { makeElectricContext, useLiveQuery } from "electric-sql/react";
 import { genUUID, uniqueTabId } from "electric-sql/util";
 import { ElectricDatabase, electrify } from "electric-sql/wa-sqlite";
-import getConfig from "next/config";
 import { authToken } from "@/utils/auth";
 import { Electric, Items as Item, schema } from "@/generated/client";
 
@@ -108,3 +107,5 @@ const ExampleComponent = () => {
     </div>
   );
 };
+
+export default Example;
